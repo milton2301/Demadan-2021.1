@@ -1,0 +1,134 @@
+*{
+    font-family: 'Roboto';
+}
+
+
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color:#fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-primary{
+    color: black;
+    background-color: rgb(190, 116, 162);
+    border: 1px solid #cccc;
+}
+
+.btn-primary:hover{
+    color: black;
+    background-color: rgb(190, 116, 162);
+    border: 1px solid rgb(190, 116, 162);
+}
+
+#navbar img{
+width: 80%;
+height: 10vh ;
+margin-left: 5%;
+}
+
+#navbar{
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+#navbar a{
+    font-size: 14pt;
+    color: black;
+}
+
+#navbar a:hover{
+    font-size: 14pt;
+    color: rgb(190, 116, 162);
+}
+
+#prod-container{
+    padding: 30px;
+}
+
+#prod-container h2{
+    margin-bottom: 10px;
+}
+
+#cards-container{
+    display: flex;
+}
+
+#prod-container .card{
+    text-align: center;
+    flex: 1 1 24%;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: .5%;
+    border: none;
+    background-color: #cccc;
+}
+
+#prod-container img{
+    max-height: 150px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px;
+}
+
+
+.card .card-date{
+    font-size: 10pt;
+    color: black; ;
+}
+
+.card .card-title{
+    color: black;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+#image-container img{
+    border-radius: 10px;
+}
+
+/*Estilo botões de comprar*/
+
+
+
+/*Estilo botões de comprar*/
+
+/* Estilo imagem do edit*/
+
+.img-preview{
+    width: 150px;
+    margin-top: 10px;
+}
+
+/* Estilo imagem do edit*/
+
+/*Estilo do footer*/
+footer{
+    text-align: center;
+    background-color: rgb(190, 116, 162);
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+   margin-bottom:0;
+}
