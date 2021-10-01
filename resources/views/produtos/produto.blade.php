@@ -31,13 +31,14 @@
 
                 {{--  --}}
                 <a href="/" class="btn btn-primary">Voltar</a>
-                <a href="/admin/edit/{{ $produtos->id }}" class="btn btn-info edit-btn">Editar</a>
-                <form action="/admin/{{ $produtos->id }}" method="POST">
-                    @csrf
-                    @method('DELETE') <br>
-                    <button type="submit" class="btn btn-danger delete-btn">Excluir item</button>
-                </form>
-
+                @if($user->email == $adm)
+                    <a href="/admin/edit/{{ $produtos->id }}" class="btn btn-info edit-btn">Editar</a>
+                    <form action="/admin/{{ $produtos->id }}" method="POST">
+                        @csrf
+                        @method('DELETE') <br>
+                        <button type="submit" class="btn btn-danger delete-btn">Excluir item</button>
+                    </form>
+                @endif
                 {{--  --}}
 
             </div>
