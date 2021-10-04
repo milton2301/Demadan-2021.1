@@ -35,9 +35,6 @@
             </div>
             <ul class="navbar-nav">
                 @auth
-            {{--     <li>
-                    <a href="/dashboard" class="nav-link">dashboard</a>
-                </li>  --}}
                 <li>
                     <a href="/user/profiler" class="nav-link">Meu perfil</a>
                 </li>

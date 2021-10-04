@@ -25,12 +25,26 @@ class ControllerDemadan extends Controller
     }
 
 
+    public function produto($id){ /* Função que retorna os dados de um produto especifico*/
+
+        $user = auth()->user();
+
+        $admin = $user->email;
+
+        $produtos = Produto::findOrFail($id);
+
+        return view('produtos.produto',['produtos' => $produtos, 'admin'=>$admin]);
+    }
+
+
     public function edit($id){ /* Função que pega o id de um produto especifico para editar */
 
         $produto = Produto:: findOrFail($id);
 
 
         return view('admin.edit', ['produto'=>$produto]);
+
+
 
     }
 
@@ -49,14 +63,6 @@ class ControllerDemadan extends Controller
         return redirect('/');/*->with('msg','Tarefa concluida com sucesso!'); */
 
     }
-
-    public function produto($id){ /* Função que retorna os dados de um produto especifico*/
-
-        $produtos = Produto::findOrFail($id);
-
-        return view('produtos.produto',['produtos' => $produtos]);
-    }
-
 
     public function carrinho(){ /* Função que retorna os dados do carrinho de compra de um usuário */
         return view('produtos.carrinho');
