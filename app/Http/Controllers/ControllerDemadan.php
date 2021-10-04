@@ -79,19 +79,6 @@ class ControllerDemadan extends Controller
 
     }
 
-<<<<<<< HEAD
-=======
-    public function produto($id){ /* Função que retorna os dados de um produto especifico*/
-
-        $user = auth()->user();
-
-        $produtos = Produto::findOrFail($id);
-
-        return view('produtos.produto',['produtos' => $produtos,'user' => $user, 'adm'=>'amiltongomes2301@gmail.com']);
-    }
-
-
->>>>>>> e0adc03b45651a6ad3d2a582ba023ab4452ead5a
     public function carrinho(){ /* Função que retorna os dados do carrinho de compra de um usuário */
         return view('produtos.carrinho');
     }

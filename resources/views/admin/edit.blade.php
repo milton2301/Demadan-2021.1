@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title','Editando' .$produto->nome)
+@section('title','Editando ' .$produto->nome)
 
 
 @section('content')

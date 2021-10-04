@@ -11,7 +11,7 @@
                 <img src="/img/imagensRoupas/{{ $produtos->imagem }}" alt="{{$produtos->nome }}">
                 <div id="card" class="card-body">
                     <p class="card-title">{{ $produtos->nome}}</p>
-                    <p class="card-title">Valor: {{ $produtos->valor}}</p>
+                    <p class="card-title">R$: {{ $produtos->valor}}</p>
                     <a href="/" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
