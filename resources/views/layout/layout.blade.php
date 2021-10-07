@@ -17,6 +17,9 @@
     {{-- Font de estilos do google --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     {{-- Font de estilos do google --}}
+    {{-- Icons Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    {{-- Icons Awesome --}}
     {{-- css da aplicação --}}
     <link rel="stylesheet" href="/css/style.css">
     {{-- css da aplicação --}}
@@ -37,18 +40,18 @@
             <ul class="navbar-nav">
                 @auth
                 <li>
-                    <a href="/user/profiler" class="nav-link">Meu perfil</a>
+                    <a href="/user/profiler" class="nav-link">Meu perfil <i class="far fa-address-card fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="/cadastra/create" class="nav-link">Create</a>
+                    <a href="/cadastra/create" class="nav-link">Create <i class="far fa-plus-square fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="/produtos/carrinho" class="nav-link">Carrinho</a>
+                    <a href="/produtos/carrinho" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
                 </li>
                 <li>
                     <form action="/logout" method="POST">
                         @csrf
-                        <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                        <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair <i class="fas fa-sign-out-alt"></i></a>
                     </form>
                 </li>
                 @endauth
