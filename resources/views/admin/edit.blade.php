@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="title">Valor</label>
-                <input type="number" name="valor" id="valor" class="form-control" value="{{ $produto->valor}}">
+                <input type="text" name="valor" id="valor" class="form-control" value="{{ $produto->valor}}">
             </div>
             <div class="form-group">
                 <label for="title">Trocar imagem</label>
@@ -62,7 +62,7 @@
                 <img src="/img/imagensRoupas/{{ $produto->imagem }}" alt="{{ $produto->nome }}" class="img-preview">
                 <p>Imagem atual</p>
             </div>
-            <input type="submit" class="btn btn-primary" value="Atualizar">
+            <button type="submit" class="btn btn-primary">Atualizar <i class="fas fa-sync fa-lg"></i></button>
         </form>
     </div>
 

@@ -43,7 +43,7 @@
                 <div class="col-md-4">
                     <form action="" method="POST">
                         @csrf
-                        <a href="#" class="btn btn-primary">Comprar <i class="fas fa-cart-plus fa-lg"></i></a>
+                        <a href="#" class="btn btn-primary">Comprar <i class="fas fa-shopping-cart fa-lg"></i></a>
                     </form>
                 </div>
                 <div class="col-md-4">
