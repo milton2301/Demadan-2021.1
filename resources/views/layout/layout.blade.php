@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title> {{-- Criar o titulo dinâmicamente --}}
-    <link rel="shortcut icon" href="/imagem/dema.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/imagem/dema.png') }}" type="image/x-icon">
     {{-- Bootstrap css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     {{-- Bootstrap css --}}
@@ -30,7 +30,7 @@
         <nav id="nav" class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
             <a href="/" class="navbar-brand">
-                <img src="/imagem/LGpreta.png" alt="logo da empresa">
+                <img src="{{ asset('/imagem/LGpreta.png') }}" alt="logo da empresa">
             </a>
             <div id="search-container" class="col-md-4">
                 <form action="/" method="GET">
@@ -66,18 +66,18 @@
             </ul>
             </div>
         </nav>
-    </header>
-    <main>
-        <div class="container-fluid">
-            <div class="row">
-                @if(session('msg'))
-                    <div class="msg">{{ session('msg') }}</div>
-                @endif
-                @yield('content') {{-- Função que contem o conteúdo do web site --}}
+        </header>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <div class="msg">{{ session('msg') }}</div>
+                    @endif
+                    @yield('content') {{-- Função que contem o conteúdo do web site --}}
+                </div>
             </div>
-        </div>
-    </main>
-    <footer>
+        </main>
+        <footer>
         <p>
           <h3>Demadan Store &copy; 2021</h3>
         </p>

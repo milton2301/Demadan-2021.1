@@ -22,6 +22,7 @@
             <div class="form-group">
                 <label for="tamanho">Tamanho</label>
                 <select name="tamanho" id="tamanho" class="form-control">
+                    <option value="">Escolha um tamanho</option>>
                     <option value="G">Grande</option>
                     <option value="M">Média</option>
                     <option value="P">Pequena</option>

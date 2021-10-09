@@ -18,7 +18,7 @@
                 <div id="cards" class="card-body">
                     <p class="card-title">{{ $produto->nome}}</p>
                     <p class="card-title">R$: {{ $produto->valor}}</p>
-                    <a href="{{ route('produto',$produto->id) }}" class="btn btn-primary">Ver mais <i class="fas fa-info-circle fa-lg"></i></a>
+                    <a href="/produtos/produto/{{ $produto->id }}" class="btn btn-primary">Ver mais <i class="fas fa-info-circle fa-lg"></i></a>
                 </div>
             </div>
         @endforeach
