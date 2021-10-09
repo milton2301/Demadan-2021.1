@@ -11,13 +11,13 @@ Route::put('/admin/update/{id}',[ControllerDemadan::class, 'update']); /* Rota q
 
 Route::delete('/admin/{id}',[ControllerDemadan::class,'destroy'])->middleware('auth'); /*Rota que leva os dados que serão excluidos do banco  */
 
-Route::get('/cadastra/create',[ControllerDemadan::class, 'create'])->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
+Route::get('/cadastra/create',[ControllerDemadan::class, 'create'])->name('cadastrar')->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
 
 Route::post('/cadastra',[ControllerDemadan::class, 'store'])->middleware('auth'); /* Rota que lança dos dados no banco */
 
-Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->middleware('auth'); /* Rota que manda para as especificações de cada produto */
+Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->name('produto')->middleware('auth'); /* Rota que manda para as especificações de cada produto */
 
-Route::get('/produtos/carrinho', [ControllerDemadan::class, 'carrinho'])->middleware('auth'); /* Rota que manda o cliente para o seu carrinho de compras */
+Route::get('/produtos/carrinho', [ControllerDemadan::class, 'carrinho'])->name('carrinho')->middleware('auth'); /* Rota que manda o cliente para o seu carrinho de compras */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

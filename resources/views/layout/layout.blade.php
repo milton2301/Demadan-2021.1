@@ -43,10 +43,10 @@
                     <a href="/user/profiler" class="nav-link">Meu perfil <i class="far fa-address-card fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="/cadastra/create" class="nav-link">Create <i class="far fa-plus-square fa-lg"></i></a>
+                    <a href="{{ route('cadastrar') }}" class="nav-link">Create <i class="far fa-plus-square fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="/produtos/carrinho" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
+                    <a href="{{ route('carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
                 </li>
                 <li>
                     <form action="/logout" method="POST">
