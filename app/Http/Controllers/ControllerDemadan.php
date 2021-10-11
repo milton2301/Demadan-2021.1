@@ -79,10 +79,6 @@ class ControllerDemadan extends Controller
 
     }
 
-    public function carrinho(){ /* Função que retorna os dados do carrinho de compra de um usuário */
-        return view('produtos.carrinho');
-    }
-
     public function create(){  /* Função de que retorna a rota de criação de produtos */
 
         return view('cadastra.create');
@@ -117,5 +113,43 @@ class ControllerDemadan extends Controller
 
         return redirect('/');
     }
+
+    public function adiciona($id){ // Função que adiciona os produtos no carrinho
+
+        $produto = Produto::findOrFail($id);
+
+        if($produto){
+
+            $carrinho = session('cart', []);
+
+            array_push($carrinho, $produto);
+
+            session(['cart' => $carrinho]);
+
+        }
+
+        return redirect('/');
+    }
+
+    public function carrinho(Request $request){ /* Função que retorna os dados do carrinho de compra de um usuário */
+
+        $carrinho = session('cart', []);
+        $data = ['cart'=>$carrinho];
+
+        return view('produtos.carrinho',$data);
+    }
+
+    public function remove($index){
+
+        $carrinho = session('cart', []);
+
+        if(isset($carrinho[$index])){
+            unset($carrinho[$index]);
+        }
+
+        session(['cart' => $carrinho]);
+        return redirect()->route("ver_carrinho");
+    }
+
 
 }

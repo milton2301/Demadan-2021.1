@@ -46,7 +46,7 @@
                     <a href="{{ route('cadastrar') }}" class="nav-link">Create <i class="far fa-plus-square fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="{{ route('carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
+                    <a href="{{ route('ver_carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
                 </li>
                 <li>
                     <form action="/logout" method="POST">
@@ -73,7 +73,7 @@
                     @if(session('msg'))
                         <div class="msg">{{ session('msg') }}</div>
                     @endif
-                    @yield('content') {{-- Função que contem o conteúdo do web site --}}
+                    @yield('content') {{-- Conteúdo do web site --}}
                 </div>
             </div>
         </main>
