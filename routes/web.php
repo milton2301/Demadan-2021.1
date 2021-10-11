@@ -23,6 +23,8 @@ Route::get('/produtos/carrinho/adiciona/{id}', [ControllerDemadan::class, 'adici
 
 Route::get('/remove/{index}', [ControllerDemadan::class, 'remove'])->name('remover')->middleware('auth'); /* Que remove item do carrinho*/
 
+Route::post('/produtos/carrinho/finalizar', [ControllerDemadan::class, 'finalizar'])->name('finalizar_compra')->middleware('auth'); /* Finalizar compra*/
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard'); /* Rota que leva o usuário para fazer as verificações no seu perfil, editar, excluir */

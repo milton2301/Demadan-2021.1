@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\User;
+use App\Services\CompraServices;
 
 class ControllerDemadan extends Controller
 {
@@ -148,6 +149,23 @@ class ControllerDemadan extends Controller
         }
 
         session(['cart' => $carrinho]);
+        return redirect()->route("ver_carrinho");
+    }
+
+    public function finalizar(Request $request){
+
+        $produtos = session('cart', []);
+
+        $compra = new CompraServices();
+
+        $estado = $compra->finalizarCompra($produtos, $user = auth()->user());
+
+        if($estado['status'] == 'Ok'){
+            $request->session()->forget('cart');
+        }
+
+        $request->session()->flash($estado['status'], $estado['message']);
+
         return redirect()->route("ver_carrinho");
     }
 

@@ -4,13 +4,17 @@
 
 @section('content')
 
+@php
+    $total = 0;
+@endphp
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1">
 
-                <h3>Carrinho</h3>
-
                 @if (isset($cart) && count($cart) > 0)
+
+                <h3>Itens do meu carrinho</h3>
 
                     <table class="table table-striped table-bordered">
                         <thead class="table-dark">
@@ -35,13 +39,29 @@
                                     <td>{{ $itensCarrinho->marca }}</td>
                                     <td><a href="{{ route('remover', ['index' => $index]) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash fa-lg"></a></td>
                                 </tr>
+                                @php
+                                    $total +=$itensCarrinho->valor;
+                                @endphp
                             @endforeach
                         </tbody>
                     </table>
                 @else
-                    <p>Nenhum item no carrinho</p>
+                    <p><h4>Carrinho vazio</h4></p>
                 @endif
 
+                @if (isset($cart) && count($cart) > 0)
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            Valor total do pedidio R$ {{ $total }}
+                        </td>
+                    </tr>
+                </tfoot>
+                <form action="{{ route('finalizar_compra') }}" method="POST">
+                    @csrf
+                    <input type="submit" value="Finalizar compra" class="btn btn-success">
+                </form>
+                @endif
             </div>
         </div>
     </div>

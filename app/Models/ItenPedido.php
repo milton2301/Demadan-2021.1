@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ItenPedido extends Model
 {
     use HasFactory;
+
+    protected $table = 'iten_pedidos';
+
+    protected $fillable = ['quantidade','valor','produto_id','pedido_id'];
+
 }
