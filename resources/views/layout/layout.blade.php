@@ -20,6 +20,9 @@
     {{-- Icons Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     {{-- Icons Awesome --}}
+    {{-- Link css animate --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    {{-- Link css animate --}}
     {{-- css da aplicação --}}
     <link rel="stylesheet" href="/css/style.css">
     {{-- css da aplicação --}}
@@ -32,7 +35,7 @@
             <a href="/" class="navbar-brand">
                 <img src="{{ asset('/imagem/LGpreta.png') }}" alt="logo da empresa">
             </a>
-            <div id="search-container" class="col-md-5">
+            <div id="search-container" class="col-md-4">
                 <form action="/" method="GET">
                     <input type="text" class="form-control" id="search" name="search" placeholder="Buscando por....">
                 </form>
@@ -44,6 +47,9 @@
                 </li>
                 <li>
                     <a href="{{ route('cadastrar') }}" class="nav-link">Cadastrar <i class="far fa-plus-square fa-lg"></i></a>
+                </li>
+                <li>
+                    <a href="{{ route('historico_compras') }}" class="nav-link">Minhas compras</i></a>
                 </li>
                 <li>
                     <a href="{{ route('ver_carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>

@@ -11,7 +11,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-
                 @if (isset($cart) && count($cart) > 0)
 
                 <h3>Itens do meu carrinho</h3>

@@ -5,7 +5,7 @@
 
 @section('content') {{-- Corpo do site --}}
 
-<div id="prod-container" class="col-md-12">
+<div id="prod-container" class="col-md-12 animate__animated animate__fadeInRight">
     @if ($search)
         <h4> Todos os resultados da busca por <strong>{{ $search }}</strong></h4>
     @else

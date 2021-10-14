@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Pedido;
 use App\Models\User;
 use App\Services\CompraServices;
 
@@ -160,13 +161,27 @@ class ControllerDemadan extends Controller
 
         $estado = $compra->finalizarCompra($produtos, $user = auth()->user());
 
-        if($estado['status'] == 'Ok'){
+        if($estado['status'] == 'ok'){
             $request->session()->forget('cart');
         }
 
         $request->session()->flash($estado['status'], $estado['message']);
 
         return redirect()->route("ver_carrinho");
+    }
+
+    public function historico(){
+
+        $data = [];
+
+        $id_user = auth()->user()->id;
+
+        $pedidos = Pedido::where('usuario_id', $id_user)->orderBy('created_at', 'DESC')->get();
+
+        $data['pedidos'] = $pedidos;
+
+        return view('produtos.compras', $data);
+
     }
 
 

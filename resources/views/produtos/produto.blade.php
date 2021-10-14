@@ -4,28 +4,11 @@
 
 @section('content')
 
-<div id="container prod-container" class="col-md-10 offset-md-1">
+<div id="container prod-container" class="col-md-10 offset-md-1 animate__animated animate__fadeInLeft">
     <p></p>
     <div id="cards-container" class="row-card">
             <div id="cards" class="card col-md-5">
                 <img src="/img/imagensRoupas/{{ $produtos->imagem }}" alt="{{$produtos->nome }}">
-              {{--   <div id="card" class="card-body">
-                    <p class="card-title">{{ $produtos->nome}}</p>
-                    <p class="card-title">R$: {{ $produtos->valor}}</p>
-                    <div class="container">
-                    <div class="row">
-                    <div class="col-4">
-                        <a href="{{ route('adicionar', ['id' => $produtos->id]) }}"><i class="fas fa-cart-plus fa-lg"></i></a>
-                    </div>
-                    <div class="col-4">
-                        <a href="/"><i class="fas fa-reply-all fa-lg"></i></a>
-                    </div>
-                    <div class="col-4">
-                        <a href="#"><i class="fas fa-minus-square fa-lg"></i></a>
-                    </div>
-                </div>
-                </div>
-                </div>--}}
             </div>
             <div class="col-md-5 desc">
                 <h1>{{ $produtos->nome }}</h1>
