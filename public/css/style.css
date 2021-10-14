@@ -85,6 +85,9 @@ margin-left: 5%;
     border-top-right-radius: 10px;
 }
 
+.desc{
+    margin-left: 20px;
+}
 
 .card .card-date{
     font-size: 10pt;
@@ -112,7 +115,9 @@ margin-left: 5%;
 
 /*Estilo botões de comprar*/
 
-
+.btn-prod{
+    width: 150px;
+}
 
 /*Estilo botões de comprar*/
 
@@ -125,6 +130,10 @@ margin-left: 5%;
 
 .table{
     border: 1px solid #cccc;
+}
+
+.col-4{
+    padding: 1%;
 }
 
 /* Estilo imagem do edit*/

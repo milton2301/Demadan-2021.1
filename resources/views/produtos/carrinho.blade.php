@@ -59,6 +59,21 @@
                 </tfoot>
                 <form action="{{ route('finalizar_compra') }}" method="POST">
                     @csrf
+                    <div class="pagamentos">
+                        <p>Selecione a forma de pagamento</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Débito
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Crédito
+                            </label>
+                        </div>
+                    </div>
                     <input type="submit" value="Finalizar compra" class="btn btn-success">
                 </form>
                 @endif

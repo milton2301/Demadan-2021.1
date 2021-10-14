@@ -31,11 +31,11 @@ class CompraServices{
 
             }
             DB::commit();
-            return ['status' => 'Ok', 'message' => 'Compra realiada com sucesso!'];
+            return ['status' => 'ok', 'message' => 'Compra finalizada com sucesso!'];
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error("ERRO: VENDA SERVICE", ['message' => $e->getMessage] );
-            return ['status'=>'err', 'message' => 'A compra não pode ser completada'];
+            return ['status'=>'err', 'message' => 'A compra não pode ser completada!'];
         }
 
     }

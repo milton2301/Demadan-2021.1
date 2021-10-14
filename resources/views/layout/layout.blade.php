@@ -32,7 +32,7 @@
             <a href="/" class="navbar-brand">
                 <img src="{{ asset('/imagem/LGpreta.png') }}" alt="logo da empresa">
             </a>
-            <div id="search-container" class="col-md-4">
+            <div id="search-container" class="col-md-5">
                 <form action="/" method="GET">
                     <input type="text" class="form-control" id="search" name="search" placeholder="Buscando por....">
                 </form>
@@ -40,10 +40,10 @@
             <ul class="navbar-nav">
                 @auth
                 <li>
-                    <a href="/user/profiler" class="nav-link">Meu perfil <i class="far fa-address-card fa-lg"></i></a>
+                    <a href="/user/profiler" class="nav-link">@if(\Auth::user()){{ \Auth::user()->name }} @endif <i class="far fa-address-card fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="{{ route('cadastrar') }}" class="nav-link">Create <i class="far fa-plus-square fa-lg"></i></a>
+                    <a href="{{ route('cadastrar') }}" class="nav-link">Cadastrar <i class="far fa-plus-square fa-lg"></i></a>
                 </li>
                 <li>
                     <a href="{{ route('ver_carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
@@ -70,8 +70,15 @@
         <main>
             <div class="container-fluid">
                 <div class="row">
-                    @if(session('msg'))
-                        <div class="msg">{{ session('msg') }}</div>
+                    @if($message = Session::get('err'))
+                        <div class="col-12">
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        </div>
+                    @endif
+                    @if($message = Session::get('ok'))
+                        <div class="col-12">
+                            <div class="alert alert-success">{{ $message }}</div>
+                        </div>
                     @endif
                     @yield('content') {{-- Conteúdo do web site --}}
                 </div>
