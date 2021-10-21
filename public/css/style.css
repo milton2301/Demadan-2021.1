@@ -97,7 +97,6 @@ margin-left: 5%;
 .card .card-title{
     color: black;
     font-size: 10pt;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -151,4 +150,14 @@ footer{
 
 footer p{
    margin-bottom:0;
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.575);
 }

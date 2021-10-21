@@ -95,7 +95,10 @@
         </main>
         <footer>
         <p>
-          <h3>Demadan Store &copy; 2021</h3>
+          <h5>Demadan Store &copy; 2021 Loja de roupas femeninas</h5>
+        <p>
+            Contato: <a href="mailto:newgenleaderspiiel@gmail.com">www.demadanstore.com.br</a>
+        </p>
         </p>
     </footer>
 
