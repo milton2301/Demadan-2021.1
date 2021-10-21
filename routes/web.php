@@ -27,6 +27,8 @@ Route::post('/produtos/carrinho/finalizar', [ControllerDemadan::class, 'finaliza
 
 Route::get('/produtos/compras/historico', [ControllerDemadan::class, 'historico'])->name('historico_compras')->middleware('auth'); /* Ver histórico das compras*/
 
+Route::post('/produtos/compras/detalhes', [ControllerDemadan::class, 'detalhes'])->name('detalhes_compras')->middleware('auth'); /* Ver detalhes das compras*/
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard'); /* Rota que leva o usuário para fazer as verificações no seu perfil, editar, excluir */

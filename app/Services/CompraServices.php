@@ -26,7 +26,7 @@ class CompraServices{
                 $itens->quantidade = 1;
                 $itens->valor = $prod->valor;
                 $itens->produto_id = $prod->id;
-                $itens->pedido_id = $user->id;
+                $itens->pedido_id = $pedido->id;
                 $itens->save();
 
             }
@@ -34,7 +34,7 @@ class CompraServices{
             return ['status' => 'ok', 'message' => 'Compra finalizada com sucesso!'];
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error("ERRO: VENDA SERVICE", ['message' => $e->getMessage] );
+            Log::error("ERRO: VENDA SERVICE", ['message' => $e->getMessage()] );
             return ['status'=>'err', 'message' => 'A compra não pode ser completada!'];
         }
 

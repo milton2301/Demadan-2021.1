@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Pedido;
+use App\Models\ItenPedido;
 use App\Models\User;
 use App\Services\CompraServices;
 
@@ -174,13 +175,28 @@ class ControllerDemadan extends Controller
 
         $data = [];
 
-        $id_user = auth()->user()->id;
+        $user = auth()->user();
 
-        $pedidos = Pedido::where('usuario_id', $id_user)->orderBy('created_at', 'DESC')->get();
+        $id_user = $user->id;
+
+        $pedidos = Pedido::where('usuario_id', $id_user)->orderBy('created_at', 'desc')->get();
 
         $data['pedidos'] = $pedidos;
 
         return view('produtos.compras', $data);
+
+    }
+
+    public function detalhes(Request $request){
+
+        $data = [];
+        $id_pedido = $request->input("id_pedido");
+
+        $listaItens = ItenPedido::join("produtos","produtos.id", "=" ,"iten_pedidos.produto_id")->where("pedido_id", $id_pedido)->get(['iten_pedidos.*','iten_pedidos.valor as itemValor','produtos.*']);
+
+        $data['listaItens'] = $listaItens;
+
+        return view('produtos.detalhes', $data);
 
     }
 
