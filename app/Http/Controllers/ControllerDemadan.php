@@ -62,8 +62,6 @@ class ControllerDemadan extends Controller
             return view('index',['produtos' => $produtos, 'search' => $search]);
         }
 
-
-
     }
 
     public function update(Request $request){ /* Função que faz a injeção dos dados atualizados no banco */
@@ -200,5 +198,10 @@ class ControllerDemadan extends Controller
 
     }
 
+    public function pagar(){
+        $data = [];
+
+        return view('produtos.pagar', $data);
+    }
 
 }

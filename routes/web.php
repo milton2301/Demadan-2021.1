@@ -1,19 +1,34 @@
 <?php
 
 use App\Http\Controllers\ControllerDemadan;
+use App\Http\Controllers\ControllerAdmin;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[ControllerDemadan::class, 'index']); /* Rota para a pagina princiapl do site */
 
-Route::get('/admin/edit/{id}',[ControllerDemadan::class, 'edit'])->name('editar')->middleware('auth'); /* Rota que recupera uma tarefa para editar*/
+Route::get('/admin/edit/{id}',[ControllerAdmin::class, 'edit'])->name('editar')->middleware('auth'); /* Rota que recupera uma tarefa para editar*/
 
-Route::put('/admin/update/{id}',[ControllerDemadan::class, 'update'])->middleware('auth'); /* Rota que faz o update dos dados no banco */
+Route::put('/admin/update/{id}',[ControllerAdmin::class, 'update'])->middleware('auth'); /* Rota que faz o update dos dados no banco */
 
-Route::delete('/admin/{id}',[ControllerDemadan::class,'destroy'])->middleware('auth'); /*Rota que leva os dados que serão excluidos do banco  */
+Route::delete('/admin/{id}',[ControllerAdmin::class,'destroy'])->middleware('auth'); /*Rota que leva os dados que serão excluidos do banco  */
 
-Route::get('/cadastra/create',[ControllerDemadan::class, 'create'])->name('cadastrar')->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
+Route::get('/cadastra/create',[ControllerAdmin::class, 'create'])->name('cadastrar')->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
 
-Route::post('/cadastra',[ControllerDemadan::class, 'store'])->middleware('auth'); /* Rota que lança dos dados no banco */
+Route::post('/cadastra',[ControllerAdmin::class, 'store'])->middleware('auth'); /* Rota que lança dos dados no banco */
+
+Route::get('/admin/indexAdmin',[ControllerAdmin::class, 'indexAdmin'])->name('admin')->middleware('auth'); /* Rota para a pagina princiapl do site */
+
+Route::get('/admin/produto/{id}',[ControllerAdmin::class, 'produto'])->name('ver_prod')->middleware('auth'); /* Rota que manda para as especificações de cada produto */
+
+Route::get('/admin/pedidosAdmin', [ControllerAdmin::class, 'pedidosPen'])->name('pedidos_pendentes');
+
+Route::get('/admin/pedidosAtendidos', [ControllerAdmin::class, 'pedidosFin'])->name('pedidos_finalizados');
+
+Route::get('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'atenderPedido'])->name('atender_pedido');
+
+Route::put('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'finalizarPedido'])->name('pedidos_status');
+
+
+Route::get('/',[ControllerDemadan::class, 'index'])->name('index'); /* Rota para a pagina princiapl do site */
 
 Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->name('ver_produto')->middleware('auth'); /* Rota que manda para as especificações de cada produto */
 
@@ -28,6 +43,8 @@ Route::post('/produtos/carrinho/finalizar', [ControllerDemadan::class, 'finaliza
 Route::get('/produtos/compras/historico', [ControllerDemadan::class, 'historico'])->name('historico_compras')->middleware('auth'); /* Ver histórico das compras*/
 
 Route::post('/produtos/compras/detalhes', [ControllerDemadan::class, 'detalhes'])->name('detalhes_compras')->middleware('auth'); /* Ver detalhes das compras*/
+
+Route::match(['get', 'post'], '/compras/pagar', [ControllerDemadan:: class, 'pagar'])->name('pagamento')->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

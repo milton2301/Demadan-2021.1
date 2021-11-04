@@ -5,6 +5,8 @@
 @section('content')
 
 @php
+    session_start();
+                                    
     $total = 0;
 @endphp
 
@@ -40,6 +42,7 @@
                                 </tr>
                                 @php
                                     $total +=$itensCarrinho->valor;
+                                    $_SESSION['total'] = $total;
                                 @endphp
                             @endforeach
                         </tbody>
@@ -56,24 +59,11 @@
                         </td>
                     </tr>
                 </tfoot>
-                <form action="{{ route('finalizar_compra') }}" method="POST">
+                <form action="{{ route('pagamento') }}" method="POST">
                     @csrf
                     <div class="pagamentos">
-                        <p>Selecione a forma de pagamento</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Débito
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                              Crédito
-                            </label>
-                        </div>
                     </div>
-                    <input type="submit" value="Finalizar compra" class="btn btn-success">
+                    <input type="submit" value="Realizar pagamento" class="btn btn-success">
                 </form>
                 @endif
             </div>

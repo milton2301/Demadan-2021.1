@@ -15,7 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 
     {{-- Bootstrap JavaScript --}}
     {{-- Font de estilos do google --}}
@@ -30,20 +29,17 @@
     {{-- css da aplicação --}}
     <link rel="stylesheet" href="/css/style.css">
     {{-- css da aplicação --}}
-    {{-- Js da aplicação --}}
-    <script src="/scripts/script.js"></script>
-    {{-- Js da aplicação --}}
 
 </head>
 <body id="body">
     <header id="header">
         <nav id="nav" class="navbar navbar-expand-lg navbar-light">
             <div class="collapse navbar-collapse" id="navbar">
-            <a href="/" class="navbar-brand">
+            <a href="{{ route('admin') }}" class="navbar-brand">
                 <img src="{{ asset('/imagem/LGpreta.png') }}" alt="logo da empresa">
             </a>
             <div id="search-container" class="col-md-4">
-                <form action="/" method="GET">
+                <form action="{{ route('admin') }}" method="GET">
                     <input type="text" class="form-control" id="search" name="search" placeholder="Buscando por....">
                 </form>
             </div>
@@ -52,15 +48,8 @@
                 <li>
                     <a href="/user/profiler" class="nav-link">@if(\Auth::user()){{ \Auth::user()->name }} @endif <i class="far fa-address-card fa-lg"></i></a>
                 </li>
-                @if (\Auth::user()->email == "amiltongomes2301@gmail.com")
                 <li>
-                    <a href="{{ route('admin') }}" class="nav-link">Painel administration</a></li>
-                @endif
-                <li>
-                    <a href="{{ route('historico_compras') }}" class="nav-link">Minhas compras</i></a>
-                </li>
-                <li>
-                    <a href="{{ route('ver_carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>
+                    <a href="{{ route('index') }}" class="nav-link">Visão do usuário<i class="far fa-plus-square fa-lg"></i></a>
                 </li>
                 <li>
                     <form action="/logout" method="POST">
@@ -69,14 +58,6 @@
                     </form>
                 </li>
                 @endauth
-                @guest
-                <li>
-                    <a href="/register" class="nav-link">Cadastrar-se</a>
-                </li>
-                <li>
-                    <a href="/login" class="nav-link">Logar-se</a>
-                </li>
-                @endguest
             </ul>
             </div>
         </nav>
