@@ -54,10 +54,10 @@
                 </li>
                 @if (\Auth::user()->email == "amiltongomes2301@gmail.com")
                 <li>
-                    <a href="{{ route('admin') }}" class="nav-link">Painel administration</a></li>
+                    <a href="{{ route('admin') }}" class="nav-link">Admin <i class="fas fa-user-cog"></i></a></li>
                 @endif
                 <li>
-                    <a href="{{ route('historico_compras') }}" class="nav-link">Minhas compras</i></a>
+                    <a href="{{ route('historico_compras') }}" class="nav-link">Compras <i class="fas fa-shopping-bag"></i></a>
                 </li>
                 <li>
                     <a href="{{ route('ver_carrinho') }}" class="nav-link">Carrinho <i class="fab fa-shopify fa-lg"></i></a>

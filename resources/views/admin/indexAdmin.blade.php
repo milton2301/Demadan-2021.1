@@ -5,7 +5,7 @@
 
 @section('content') {{-- Corpo do site --}}
 
-<div class="col-md-6 offset-md-5"><h5>Painel Administrativo</h5></div>
+<div class="offset-md-9"><h5>Painel Administrativo</h5></div>
 
 <div class="container">
     <div class="row">

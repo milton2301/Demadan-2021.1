@@ -12,12 +12,12 @@
             </div>
             <div class="col-md-5 desc">
                 <h1>{{ $produtos->nome }}</h1>
-                <p>R$: {{ $produtos->valor}}</p>
+                <p>Valor: R$ {{ number_format($produtos->valor, 2,',','.')}}</p>
                 <p>Marca: {{ $produtos->marca}}</p>
                 <p>Tamanho: {{ $produtos->tamanho }}</p>
                 <p>Cor: {{ $produtos->cor}}</p>
                 <p>Descrições: {{ $produtos->descricao }}</p>
-                <p class="card-title"><i>Em até 5X de R$ {{ $parcelas = $produtos->valor / 5 }} s/juros no cartão da loja</i></p>
+                <p class="card-title"><i>Em até 5X de R$ {{ number_format($parcelas = $produtos->valor / 5, 2,',','.' )}} s/juros no cartão da loja</i></p>
                 {{--  --}}
                 <div class="container">
                         <div class="col-4">

@@ -9,6 +9,7 @@ body{
     position: relative;
 }
 
+
 header{
     background-color:#fff;
     border-bottom: 1px solid #ccc;
@@ -20,6 +21,8 @@ header{
 
 .container-fluid{
     padding: 0;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .btn-primary{
@@ -83,6 +86,22 @@ margin-left: 5%;
     max-height: 150px;
     border-top-left-radius: 10px ;
     border-top-right-radius: 10px;
+}
+
+.msgAdmin{
+    background-color:rgb(160, 160, 218);
+    text-align:center;
+    width: 25%;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.offset-md-9 h5{
+    background-color: rgb(160, 160, 218);
+    text-align: center;
+    width: 20%;
+    padding: 3px;
+    border-radius: 3px;
 }
 
 .desc{

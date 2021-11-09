@@ -49,7 +49,7 @@
                     <a href="/user/profiler" class="nav-link">@if(\Auth::user()){{ \Auth::user()->name }} @endif <i class="far fa-address-card fa-lg"></i></a>
                 </li>
                 <li>
-                    <a href="{{ route('index') }}" class="nav-link">Visão do usuário<i class="far fa-plus-square fa-lg"></i></a>
+                    <a href="{{ route('index') }}" class="nav-link">Visão do usuário <i class="far fa-eye"></i></a>
                 </li>
                 <li>
                     <form action="/logout" method="POST">

@@ -20,29 +20,29 @@
             </div>
             <div class="col-4">
                 CVV:
-                <input type="text" name="ncvv" class="ncvv form-control">
+                <input type="text" name="ncvv" class="ncvv form-control" required>
             </div>
             <div class="col-4">
                 Validade:
-                <input type="text" name="validade" class="validade form-control">
+                <input type="text" name="validade" class="validade form-control" required>
             </div>
             <div class="col-4">
                 Nome do cartão:
-                <input type="text" name="nomecartao" class="nomecartao form-control">
+                <input type="text" name="nomecartao" class="nomecartao form-control" required>
             </div>
             <div class="col-4">
-                Parcelas:
+                Selecione a forma de pagamento:
                 <select name="" id="" class="nparcelas form-control">
-                    <option value="0" >Número de parcelas</option>
-                    <option value="">3 x de R$ @php
+                    <option value="1x" >Débito avista</option>
+                    <option value="3x">3 x de R$ @php
                         $parcela = $total / 3;
                         echo number_format($parcela, 2, ',','.');
                     @endphp</option>
-                    <option value="">4 x de R$ @php
+                    <option value="4x">4 x de R$ @php
                         $parcela = $total / 4;
                         echo number_format($parcela, 2, ',','.');
                     @endphp</option>
-                    <option value="">5 x de R$ @php
+                    <option value="5x">5 x de R$ @php
                         $parcela = $total / 5;
                         echo number_format($parcela, 2, ',','.');
                     @endphp</option>

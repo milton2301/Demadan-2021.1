@@ -6,7 +6,7 @@
 
 @php
     session_start();
-                                    
+
     $total = 0;
 @endphp
 
@@ -26,7 +26,7 @@
                                 <th>Descrições</th>
                                 <th>Cor</th>
                                 <th>Marca</th>
-                                <th></th>
+                                <th>Remover</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +34,9 @@
                                 <tr>
                                     <td>{{ $itensCarrinho->nome }}</td>
                                     <td>{{ $itensCarrinho->valor }}</td>
+                                    @php
+                                        echo number_format($itensCarrinho->valor, 2, ',','.');
+                                    @endphp
                                     <td><img src="/img/imagensRoupas/{{ $itensCarrinho->imagem }}" height="50" alt="Foto"></td>
                                     <td>{{ $itensCarrinho->descricao }}</td>
                                     <td>{{ $itensCarrinho->cor }}</td>
@@ -55,8 +58,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="5">
-                            Valor total do pedidio R$ {{ $total }}
-                        </td>
+                            Valor total do pedidio R$ @php echo number_format($total, 2, ',','.'); @endphp</td>
                     </tr>
                 </tfoot>
                 <form action="{{ route('pagamento') }}" method="POST">
