@@ -11,4 +11,35 @@ $(function() {
         mask: "99/99"
       });
 
+      $('#cep').inputmask({
+          mask: "99999-999"
+      })
   });
+
+  function consultarCEP(){
+    let cep = document.getElementById('cep').value
+    let url = 'https://viacep.com.br/ws/'+cep+'/json/'
+
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function(response){
+        //Insere dados buscado na API do viacep com base no CEP passado pelo usuário
+            document.querySelector("#rua").value = response.logradouro
+            document.querySelector('#bairro').value = response.bairro;
+            document.querySelector('#cidade').value = response.localidade;
+            document.querySelector('#estado').value = response.uf;
+        //Desabitar inputs para usar dados resgatados com base no CEP
+            document.querySelector('#rua').readOnly = true;
+            document.querySelector('#bairro').readOnly = true;
+            document.querySelector('#cidade').readOnly = true;
+            document.querySelector('#estado').readOnly = true;
+      }
+    })
+
+  }
+
+/*$(document).on('keydown', function (event) {
+    if (event.keyCode !== 13) return;
+    consultarCEP()
+})*/

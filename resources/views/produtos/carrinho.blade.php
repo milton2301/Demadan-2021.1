@@ -6,7 +6,6 @@
 
 @php
     session_start();
-
     $total = 0;
 @endphp
 
@@ -33,10 +32,7 @@
                             @foreach ($cart as $index => $itensCarrinho)
                                 <tr>
                                     <td>{{ $itensCarrinho->nome }}</td>
-                                    <td>{{ $itensCarrinho->valor }}</td>
-                                    @php
-                                        echo number_format($itensCarrinho->valor, 2, ',','.');
-                                    @endphp
+                                    <td>{{number_format($itensCarrinho->valor, 2, ',','.')}}</td>
                                     <td><img src="/img/imagensRoupas/{{ $itensCarrinho->imagem }}" height="50" alt="Foto"></td>
                                     <td>{{ $itensCarrinho->descricao }}</td>
                                     <td>{{ $itensCarrinho->cor }}</td>

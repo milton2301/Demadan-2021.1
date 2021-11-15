@@ -12,8 +12,12 @@
         <form action="/cadastra" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
+                <label for="cod">Código</label>
+                <input name="cod" id="cod"  class="form-control" placeholder="Código do produto" autocomplete="off">
+            </div>
+            <div class="form-group">
                 <label for="nome">Nome</label>
-                <input name="nome" id="nome"  class="form-control" placeholder="Nome peça">
+                <input name="nome" id="nome"  class="form-control" placeholder="Nome peça" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição</label>
@@ -30,15 +34,15 @@
             </div>
             <div class="form-group">
                 <label for="cor">Cor</label>
-                <input name="cor" id="cor"  class="form-control" placeholder="Cor da peça">
+                <input name="cor" id="cor"  class="form-control" placeholder="Cor da peça" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="marca">Marca</label>
-                <input name="marca" id="marca"  class="form-control" placeholder="Marca da peça">
+                <input name="marca" id="marca"  class="form-control" placeholder="Marca da peça" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="valor">Valor</label>
-                <input type="number" step="any" name="valor" id="valor"  class="form-control" placeholder="R$ xx,xx">
+                <input type="number" step="any" name="valor" id="valor"  class="form-control" placeholder="R$ xx,xx" autocomplete="off">
             </div><br>
             <div class="form-group">
                 <label for="imagem">Imagem</label>

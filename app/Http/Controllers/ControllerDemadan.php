@@ -8,6 +8,7 @@ use App\Models\Pedido;
 use App\Models\ItenPedido;
 use App\Models\User;
 use App\Services\CompraServices;
+use Illuminate\Support\Facades\DB;
 
 class ControllerDemadan extends Controller
 {
@@ -158,7 +159,7 @@ class ControllerDemadan extends Controller
 
         $compra = new CompraServices();
 
-        $estado = $compra->finalizarCompra($produtos, $user = auth()->user());
+        $estado = $compra->finalizarCompra($produtos, auth()->user());
 
         if($estado['status'] == 'ok'){
             $request->session()->forget('cart');
@@ -192,6 +193,9 @@ class ControllerDemadan extends Controller
 
         $listaItens = ItenPedido::join("produtos","produtos.id", "=" ,"iten_pedidos.produto_id")->where("pedido_id", $id_pedido)->get(['iten_pedidos.*','iten_pedidos.valor as itemValor','produtos.*']);
 
+        $totalGeral = DB::table("iten_pedidos")->where("pedido_id", $id_pedido)->get()->sum("valor");
+
+        $data['total'] = $totalGeral;
         $data['listaItens'] = $listaItens;
 
         return view('produtos.detalhes', $data);

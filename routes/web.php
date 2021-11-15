@@ -46,6 +46,9 @@ Route::post('/produtos/compras/detalhes', [ControllerDemadan::class, 'detalhes']
 
 Route::match(['get', 'post'], '/compras/pagar', [ControllerDemadan:: class, 'pagar'])->name('pagamento')->middleware('auth');
 
+Route::match(['get', 'post'], '/compras/estoque', [ControllerAdmin:: class, 'estoque'])->name('ver_estoque')->middleware('auth');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard'); /* Rota que leva o usuário para fazer as verificações no seu perfil, editar, excluir */

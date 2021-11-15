@@ -7,15 +7,14 @@
 <div class="container-fluid">
 
     <div id="produto-create-container" class="col-md-6 offset-md-3">
-        <h1>Atendendo: {{ $pedido->id }}</h1>
+        <h1>Atendendo de <strong>{{ $user->name }}</strong></h1>
 
         <div class="form-group">
             <label for="title">Cliente</label>
-            <label for="" class="form-control">{{ $user->name }}</label>
-            {{-- <input type="text" name="valor" id="valor" class="form-control" value="{{ $user->name}}">
- --}}        </div>
+                <label for="" class="form-control">{{ $user->name }}</label>
+            </div>
 
-        <form action="{{ route('pedidos_status',$pedido->id) }}{{-- /admin/update/$pedido->id --}} }}" method="POST">
+        <form action="{{ route('pedidos_status',$pedido->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">

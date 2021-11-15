@@ -6,7 +6,7 @@
 @section('content') {{-- Corpo do site --}}
 
 <div class="col-12">
-    <h2>Minhas compras</h2>
+    <h2>Pedidos atendidos</h2>
 </div>
 
 <div class="col-12">

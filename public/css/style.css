@@ -180,3 +180,8 @@ footer a:hover{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.575);
 }
+
+.cont{
+    border: 1px solid;
+    margin: 2px;
+}

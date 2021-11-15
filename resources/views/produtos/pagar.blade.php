@@ -11,6 +11,37 @@
     }
 @endphp
 
+<div class="container cont">
+    <div class="col-md-4 offset-md-4">
+        <h3>Informações para entrega</h3>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            CEP: <input type="text" onkeydown="consultarCEP()" id="cep" name="cep" class="form-control" placeholder="Informe seu CEP">
+        </div>
+        <div class="col-4">
+            Rua: <input type="text" id="rua" name="rua" class="form-control" placeholder="Nome da rua">
+        </div>
+        <div class="col-4">
+            Número: <input type="text" id="numero" name="numero" class="form-control" placeholder="Número da casa/apartamento">
+        </div>
+        <div class="col-4">
+            Bairro: <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Bairro">
+        </div>
+        <div class="col-4">
+            Cidade: <input type="text" id="cidade" name="cidade" class="form-control" placeholder="Cidade">
+        </div>
+        <div class="col-4">
+            Estado: <input type="text" id="estado" name="estado" class="form-control" placeholder="Estado">
+        </div>
+    </div>
+</div>
+
+
+<div class="container cont">
+    <div class="col-md-4 offset-md-4">
+        <h3>Formas de pagamento</h3>
+    </div>
     <form action="{{route('finalizar_compra')}}" method="post">
         @csrf
         <div class="row">
@@ -58,5 +89,6 @@
             </div>
         </div>
     </form>
+</div>
 
 @endsection

@@ -86,6 +86,7 @@ class ControllerAdmin extends Controller
 
         $produtos = new Produto;
 
+        $produtos->codigo = $request->cod;
         $produtos->nome = $request->nome;
         $produtos->descricao = $request->descricao;
         $produtos->cor = $request->cor;
@@ -215,6 +216,25 @@ class ControllerAdmin extends Controller
         $pedidos = Pedido::all();
 
         return view('admin.pedidosAdmin',['pedidos' => $pedidos]);
+        }
+    }
+
+
+    public function estoque(){ /* Função que retorna os dados de um produto especifico*/
+
+        $user = auth()->user();
+
+        $email = $user->email;
+
+        if($email == 'amiltongomes2301@gmail.com'){
+
+        $data = [];
+
+        $produtos = Produto::all();
+
+        $data['produtos'] = $produtos;
+
+        return view('admin.estoque', $data);
         }
     }
 
