@@ -10,34 +10,22 @@
             <div id="cards" class="card col-md-5">
                 <img src="/img/imagensRoupas/{{ $produtos->imagem }}" alt="{{$produtos->nome }}">
             </div>
-            <div class="col-md-5 desc">
+            <div class="col-md-7 desc">
                 <h1>{{ $produtos->nome }}</h1>
-                <p>Valor: R$ {{ number_format($produtos->valor, 2,',','.')}}</p>
                 <p>Marca: {{ $produtos->marca}}</p>
                 <p>Tamanho: {{ $produtos->tamanho }}</p>
                 <p>Cor: {{ $produtos->cor}}</p>
                 <p>Descrições: {{ $produtos->descricao }}</p>
-                <p class="card-title"><i>Em até 5X de R$ {{ number_format($parcelas = $produtos->valor / 5, 2,',','.' )}} s/juros no cartão da loja</i></p>
+                <p><strong><h5>R$ {{ number_format($produtos->valor, 2,',','.')}}</h5></strong></p>
+                <p class="card-title"><i>Em até 5X de R$ {{ number_format($parcelas = $produtos->valor / 5, 2,',','.' )}}</i></p>
                 {{--  --}}
                 <div class="container">
-                        <div class="col-4">
-                            <form action="" method="POST">
-                                @csrf
-                                <a href="{{ route('adicionar', ['id' => $produtos->id]) }}" class="btn btn-primary btn-prod">Adicionar <i class="fas fa-shopping-cart fa-lg"></i></a>
-                            </form>
-                        </div>
-                        <div class="col-4">
-                        @if ($admin == 'amiltongomes2301@gmail.com')
-                            <a href="{{ route('editar',$produtos->id)}}" class="btn btn-info edit-btn btn-prod">Editar <i class="fas fa-edit"></i></a>
-                        </div>
-                        <div class="col-4">
-                            <form action="/admin/{{ $produtos->id }}" method="POST">
-                                @csrf
-                                @method('DELETE') <br>
-                                <button type="submit" class="btn btn-danger delete-btn btn-prod">Excluir item <i class="fas fa-trash-alt fa-lg"></i></button>
-                            </form>
-                        @endif
-                        </div>
+                    <div>
+                        <form action="" method="POST">
+                            @csrf
+                            <a href="{{ route('adicionar', ['id' => $produtos->id]) }}" class="btn btn-primary btn-prod">Adicionar <i class="fas fa-shopping-cart fa-lg"></i></a>
+                        </form>
+                    </div>
                 </div>
                 {{--  --}}
             </div>
