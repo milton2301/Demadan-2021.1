@@ -15,6 +15,10 @@
             @csrf
             @method('PUT')
             <div class="form-group">
+                <label for="title">Tipo</label>
+                <input name="tipo" id="tipo"  class="form-control" value="{{ $produto->tipo }}">
+            </div>
+            <div class="form-group">
                 <label for="title">Nome da peça</label>
                 <input name="nome" id="nome"  class="form-control" value="{{ $produto->nome }}">
             </div>

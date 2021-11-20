@@ -12,8 +12,8 @@
         <form action="/cadastra" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="cod">Código</label>
-                <input name="cod" id="cod"  class="form-control" placeholder="Código do produto" autocomplete="off">
+                <label for="tipo">Tipo</label>
+                <input name="tipo" id="tipo"  class="form-control" placeholder="Tipo a que pertence a peça cadastrada" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>

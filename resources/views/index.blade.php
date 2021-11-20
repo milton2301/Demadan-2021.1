@@ -4,21 +4,21 @@
 
 
 @section('content') {{-- Corpo do site --}}
-{{-- @auth
-@if(\Auth::user()->email == "amiltongomes2301@gmail.com")
-<div class="container">
-    <div class="row">
-        <div class="offset-md-9"><h5 class="msgAdmin">Visão do usuário</h5></div>
-      </div>
-</div>
-@endif
-@endauth --}}
+
 <div id="prod-container" class="col-md-12 animate__animated animate__fadeInRight">
+
     @if ($search)
         <h4> Todos os resultados da busca por <strong>{{ $search }}</strong></h4>
+    @elseif($filtroTipo)
+    <h4>Filtrando pelo Tipo <strong>{{ $filtroTipo }}</strong></h4>
+    @elseif($filtroMarca)
+    <h4>Filtrando pela Marca: <strong>{{ $filtroMarca }}</strong></h4>
+    @elseif($filtroTamanho)
+    <h4>Filtrando pelo Tamanho: <strong>{{ $filtroTamanho }}</strong></h4>
     @else
     <h3>Todos os nossos produtos</h3>
     @endif
+
     <div id="cards-container" class="row">
         @foreach ($produtos as $produto )
             <div id="card" class="card col-md-4">

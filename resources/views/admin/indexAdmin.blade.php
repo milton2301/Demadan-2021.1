@@ -37,7 +37,7 @@
                 <div id="cards" class="card-body">
                     <p class="card-title">{{ $produto->nome}}</p>
                     <p class="card-title">Marca: {{ $produto->marca}}</p>
-                    <p class="card-title">Valor R$: {{ $produto->valor}}</p>
+                    <p class="card-title">Valor: R$ {{number_format($produto->valor, 2, ',','.')}}</p>
                     <a href="{{ route('ver_prod',$produto->id) }}" class="btn btn-primary">Ver detalhes do produto <i class="fas fa-info-circle fa-lg"></i></a>
                 </div>
             </div>

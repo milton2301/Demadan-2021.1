@@ -15,29 +15,59 @@ class ControllerDemadan extends Controller
 
     public function index(){ /* Função que gerencia os dados da pagina principal */
 
+        $data = [];
+
         $search = request('search');
+        $filtroTipo = request('tipo');
+        $filtroMarca = request('marca');
+        $filtroTamanho = request('tamanho');
 
         if($search){
             $produtos = Produto::where([
                 ['nome', 'like', '%' .$search. '%']
             ])->get();
+        }elseif($filtroTipo){
+            $produtos = Produto::where([
+                ['tipo', 'like', '%' .$filtroTipo. '%']
+            ])->get();
+        }elseif($filtroMarca){
+            $produtos = Produto::where([
+                ['marca', 'like', '%' .$filtroMarca. '%']
+            ])->get();
+        }elseif($filtroTamanho){
+            $produtos = Produto::where([
+                ['tamanho', 'like', '%' .$filtroTamanho. '%']
+            ])->get();
         }else{
             $produtos = Produto::all();
         }
 
-        return view('index',['produtos' => $produtos, 'search' => $search]);
+        $tiposProdutos = Produto::select('tipo')->groupBy('tipo')->get();
+        $marcaProdutos = Produto::select('marca')->groupBy('marca')->get();
+        $tamanhoProdutos = Produto::select('tamanho')->groupBy('tamanho')->get();
+
+        $data['tamanhoProdutos'] = $tamanhoProdutos;
+        $data['marcaProdutos'] = $marcaProdutos;
+        $data['tiposProdutos'] = $tiposProdutos;
+        $data['produtos'] = $produtos;
+        $data['search'] = $search;
+        $data['filtroTipo'] = $filtroTipo;
+        $data['filtroMarca'] = $filtroMarca;
+        $data['filtroTamanho'] = $filtroTamanho;
+
+        return view('index', $data);
     }
 
 
     public function produto($id){ /* Função que retorna os dados de um produto especifico*/
 
-        $user = auth()->user();
-
-        $admin = $user->email;
+        $data = [];
 
         $produtos = Produto::findOrFail($id);
 
-        return view('produtos.produto',['produtos' => $produtos, 'admin'=>$admin]);
+        $data['produtos'] = $produtos;
+
+        return view('produtos.produto', $data);
     }
 
 
@@ -52,15 +82,36 @@ class ControllerDemadan extends Controller
             return view('admin.edit', ['produto'=>$produto]);
         }else{
             $search = request('search');
+        $filtroTipo = request('tipo');
+        $filtroMarca = request('marca');
 
-            if($search){
-                $produtos = Produto::where([
-                    ['nome', 'like', '%' .$search. '%']
-                ])->get();
-            }else{
-                $produtos = Produto::all();
-            }
-            return view('index',['produtos' => $produtos, 'search' => $search]);
+        if($search){
+            $produtos = Produto::where([
+                ['nome', 'like', '%' .$search. '%']
+            ])->get();
+        }elseif($filtroTipo){
+            $produtos = Produto::where([
+                ['tipo', 'like', '%' .$filtroTipo. '%']
+            ])->get();
+        }elseif($filtroMarca){
+            $produtos = Produto::where([
+                ['marca', 'like', '%' .$filtroMarca. '%']
+            ])->get();
+        }else{
+            $produtos = Produto::all();
+        }
+
+        $tiposProdutos = Produto::select('tipo')->groupBy('tipo')->get();
+        $marcaProdutos = Produto::select('marca')->groupBy('marca')->get();
+
+        $data['marcaProdutos'] = $marcaProdutos;
+        $data['tiposProdutos'] = $tiposProdutos;
+        $data['produtos'] = $produtos;
+        $data['search'] = $search;
+        $data['filtroTipo'] = $filtroTipo;
+        $data['filtroMarca'] = $filtroMarca;
+
+        return view('index', $data);
         }
 
     }
@@ -83,7 +134,7 @@ class ControllerDemadan extends Controller
 
     public function create(){  /* Função de que retorna a rota de criação de produtos */
 
-        return view('cadastra.create');
+        return view('admin.create');
 
     }
 

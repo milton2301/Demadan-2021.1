@@ -39,7 +39,14 @@ $(function() {
 
   }
 
-/*$(document).on('keydown', function (event) {
-    if (event.keyCode !== 13) return;
-    consultarCEP()
-})*/
+  document.getElementById('tipo').addEventListener('change', function() {
+    this.form.submit();
+});
+
+document.getElementById('marca').addEventListener('change', function() {
+    this.form.submit();
+});
+
+document.getElementById('tamanho').addEventListener('change', function() {
+    this.form.submit();
+});

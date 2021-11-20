@@ -11,9 +11,9 @@ Route::put('/admin/update/{id}',[ControllerAdmin::class, 'update'])->middleware(
 
 Route::delete('/admin/{id}',[ControllerAdmin::class,'destroy'])->middleware('auth'); /*Rota que leva os dados que serão excluidos do banco  */
 
-Route::get('/cadastra/create',[ControllerAdmin::class, 'create'])->name('cadastrar')->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
+Route::get('/admin/create',[ControllerAdmin::class, 'create'])->name('cadastrar')->middleware('auth'); /* Rota que leva o para o cadastro de novos produtos */
 
-Route::post('/cadastra',[ControllerAdmin::class, 'store'])->middleware('auth'); /* Rota que lança dos dados no banco */
+Route::post('/admin',[ControllerAdmin::class, 'store'])->middleware('auth'); /* Rota que lança dos dados no banco */
 
 Route::get('/admin/indexAdmin',[ControllerAdmin::class, 'indexAdmin'])->name('admin')->middleware('auth'); /* Rota para a pagina princiapl do site */
 
@@ -28,9 +28,10 @@ Route::get('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'atenderPedido
 Route::put('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'finalizarPedido'])->name('pedidos_status');
 
 
+/* Configurações das rotas de funções de usuário*/
 Route::get('/',[ControllerDemadan::class, 'index'])->name('index'); /* Rota para a pagina princiapl do site */
 
-Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->name('ver_produto')->middleware('auth'); /* Rota que manda para as especificações de cada produto */
+Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->name('ver_produto');/* Rota que manda para as especificações de cada produto */
 
 Route::get('/produtos/carrinho', [ControllerDemadan::class, 'carrinho'])->name('ver_carrinho')->middleware('auth'); /* Rota que manda o cliente para o seu carrinho de compras */
 
