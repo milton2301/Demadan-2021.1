@@ -86,7 +86,7 @@ class ControllerAdmin extends Controller
 
         $produtos = new Produto;
 
-        $produtos->codigo = $request->cod;
+        $produtos->tipo = $request->tipo;
         $produtos->nome = $request->nome;
         $produtos->descricao = $request->descricao;
         $produtos->cor = $request->cor;

@@ -12,6 +12,10 @@
         <form action="/cadastra" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
+                <label for="nome">Tipo</label>
+                <input name="tipo" id="tipo"  class="form-control" placeholder="Tipo a que pertence a peça">
+            </div>
+            <div class="form-group">
                 <label for="nome">Nome</label>
                 <input name="nome" id="nome"  class="form-control" placeholder="Nome peça">
             </div>
