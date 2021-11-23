@@ -13,8 +13,6 @@
     <h4>Filtrando pelo Tipo <strong><?php echo e($filtroTipo); ?></strong></h4>
     <?php elseif($filtroMarca): ?>
     <h4>Filtrando pela Marca: <strong><?php echo e($filtroMarca); ?></strong></h4>
-    <?php elseif($filtroTamanho): ?>
-    <h4>Filtrando pelo Tamanho: <strong><?php echo e($filtroTamanho); ?></strong></h4>
     <?php else: ?>
     <h3>Todos os nossos produtos</h3>
     <?php endif; ?>

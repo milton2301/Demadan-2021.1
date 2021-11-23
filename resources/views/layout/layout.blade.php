@@ -103,9 +103,6 @@
                                 <div class="col-12 itens_select">
                                     <nav id="nav" class="navbar navbar-expand-lg navbar-light">
                                     <ul class="navbar-nav">
-                                        <li class="nav-link">
-                                            <h4 class="nav-link">Filtrar</h4>
-                                        </li>
                                         @foreach ($tiposProdutos as $produto )
                                             <form action="/" method="GET">
                                                 @csrf

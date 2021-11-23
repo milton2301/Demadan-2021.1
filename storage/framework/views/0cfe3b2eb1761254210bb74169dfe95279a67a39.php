@@ -103,9 +103,7 @@
                                 <div class="col-12 itens_select">
                                     <nav id="nav" class="navbar navbar-expand-lg navbar-light">
                                     <ul class="navbar-nav">
-                                        <li class="nav-link">
-                                            <h4 class="nav-link">Filtrar</h4>
-                                        </li>
+                                      
                                         <?php $__currentLoopData = $tiposProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <form action="/" method="GET">
                                                 <?php echo csrf_field(); ?>

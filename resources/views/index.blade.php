@@ -13,8 +13,6 @@
     <h4>Filtrando pelo Tipo <strong>{{ $filtroTipo }}</strong></h4>
     @elseif($filtroMarca)
     <h4>Filtrando pela Marca: <strong>{{ $filtroMarca }}</strong></h4>
-    @elseif($filtroTamanho)
-    <h4>Filtrando pelo Tamanho: <strong>{{ $filtroTamanho }}</strong></h4>
     @else
     <h3>Todos os nossos produtos</h3>
     @endif

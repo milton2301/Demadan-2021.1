@@ -12,7 +12,7 @@ body{
 
 header{
     background-color:#fff;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.5px solid #ccc;
 }
 
 .filter-container{
@@ -25,8 +25,32 @@ header{
 }
 
 .itens_select{
-    border: 1px solid #ccc;
+    border: 0px  #ccc;
 }
+
+#tipo, #marca{
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    border-color: rgb(190, 116, 162);
+    border-style: none;
+    box-sizing: content-box;
+    color: rgb(190, 116, 162);
+    cursor: pointer;
+    display: inline;
+    font: normal;
+    font-size: 15pt;
+    height: auto;
+    padding: 0;
+    perspective-origin: 0 0;
+    text-align: start;
+    text-decoration: none;
+    transform-origin: 0 0;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-logical-height: 3em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
+    -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+}
+
 
 .row{
     margin: 0;
