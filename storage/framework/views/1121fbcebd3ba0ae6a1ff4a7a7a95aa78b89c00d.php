@@ -18,10 +18,10 @@
                 <p class="card-title"><i>Em até 5X de R$ <?php echo e(number_format( $parcelas = $produtos->valor / 5, 2, ',','.')); ?> s/juros no cartão da loja</i></p>
                 
                 <div class="container">
-                        <div class="col-4">
+                        <div class="col-6">
                             <a href="<?php echo e(route('editar',$produtos->id)); ?>" class="btn btn-info edit-btn btn-prod">Editar <i class="fas fa-edit"></i></a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <form action="/admin/<?php echo e($produtos->id); ?>" method="POST">
                                 <?php echo csrf_field(); ?>
                                 <?php echo method_field('DELETE'); ?> <br>

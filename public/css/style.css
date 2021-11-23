@@ -24,6 +24,9 @@ header{
     padding: 0.3%;
 }
 
+.itens_select{
+    border: 1px solid #ccc;
+}
 
 .row{
     margin: 0;

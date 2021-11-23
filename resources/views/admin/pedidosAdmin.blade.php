@@ -6,7 +6,7 @@
 @section('content') {{-- Corpo do site --}}
 
 <div class="col-12">
-    <h2>Minhas compras</h2>
+    <h2>Pedidos não atendidos</h2>
 </div>
 
 <div class="col-12">
@@ -36,7 +36,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Detalhes da compra</h5>
+                <h5 class="modal-title">Detalhes do pedido</h5>
             </div>
             <div class="modal-body">
                 <div id="itenspedidos"></div>

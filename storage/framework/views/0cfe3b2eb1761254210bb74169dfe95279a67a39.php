@@ -100,55 +100,33 @@
                         <?php if(isset($tipoProdutos) || isset($marcaProdutos)): ?>
                         <div class="container filter-container">
                             <div class="row">
-                                <div class="col-3">
-                                    Filtrar
+                                <div class="col-12 itens_select">
+                                    <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-link">
+                                            <h4 class="nav-link">Filtrar</h4>
+                                        </li>
+                                        <?php $__currentLoopData = $tiposProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <form action="/" method="GET">
+                                                <?php echo csrf_field(); ?>
+                                                <li class="nav-link">
+                                                    <input class="nav-link" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->tipo); ?>">
+                                                </li>
+                                            </form>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php $__currentLoopData = $marcaProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <form action="/" method="GET">
+                                            <?php echo csrf_field(); ?>
+                                                <li class="nav-link">
+                                                    <input class="nav-link " name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->marca); ?>">
+                                                </li>
+                                                </form>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </ul>
+                                    </nav>
                                 </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Tipo 
-                                        <form action="/" method="GET">
-                                        <?php echo csrf_field(); ?>
-                                        <select name="tipo" id="tipo"  onchange="this.form.submit()">
-                                                <option value="" selected="selected">Escolha tipo</option>
-                                                <?php $__currentLoopData = $tiposProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($produto->tipo); ?>"><?php echo e($produto->tipo); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                        </form>
-                                    </ul>
-                                </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Marca
-                                        <form action="/" method="GET">
-                                        <?php echo csrf_field(); ?>
-                                        <select name="marca" id="marca" onchange="this.form.submit()">
-                                            <option value="" selected="selected">Escolha Marca</option>
-                                                <?php $__currentLoopData = $marcaProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($produto->marca); ?>"><?php echo e($produto->marca); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </form>
-                                    </ul>
-                                </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Tamanho
-                                        <form action="/" method="GET">
-                                        <?php echo csrf_field(); ?>
-                                        <select name="tamanho" id="tamanho" onchange="this.form.submit()">
-                                            <option value="" selected="selected">Escolha Tamanho</option>
-                                                <?php $__currentLoopData = $tamanhoProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($produto->tamanho); ?>"><?php echo e($produto->tamanho); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </form>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <?php endif; ?>
-                    
+
                     <?php echo $__env->yieldContent('content'); ?> 
                 </div>
             </div>

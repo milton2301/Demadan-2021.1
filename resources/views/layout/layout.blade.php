@@ -100,55 +100,33 @@
                         @if (isset($tipoProdutos) || isset($marcaProdutos))
                         <div class="container filter-container">
                             <div class="row">
-                                <div class="col-3">
-                                    Filtrar
+                                <div class="col-12 itens_select">
+                                    <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-link">
+                                            <h4 class="nav-link">Filtrar</h4>
+                                        </li>
+                                        @foreach ($tiposProdutos as $produto )
+                                            <form action="/" method="GET">
+                                                @csrf
+                                                <li class="nav-link">
+                                                    <input class="nav-link" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="{{ $produto->tipo }}">
+                                                </li>
+                                            </form>
+                                        @endforeach
+                                        @foreach ($marcaProdutos as $produto )
+                                            <form action="/" method="GET">
+                                            @csrf
+                                                <li class="nav-link">
+                                                    <input class="nav-link " name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="{{ $produto->marca }}">
+                                                </li>
+                                                </form>
+                                            @endforeach
+                                        </ul>
+                                    </nav>
                                 </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Tipo 
-                                        <form action="/" method="GET">
-                                        @csrf
-                                        <select name="tipo" id="tipo"  onchange="this.form.submit()">
-                                                <option value="" selected="selected">Escolha tipo</option>
-                                                @foreach ($tiposProdutos as $produto )
-                                                    <option value="{{ $produto->tipo }}">{{ $produto->tipo }}</option>
-                                                @endforeach
-                                        </select>
-                                        </form>
-                                    </ul>
-                                </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Marca
-                                        <form action="/" method="GET">
-                                        @csrf
-                                        <select name="marca" id="marca" onchange="this.form.submit()">
-                                            <option value="" selected="selected">Escolha Marca</option>
-                                                @foreach ($marcaProdutos as $produto )
-                                                    <option value="{{ $produto->marca }}">{{ $produto->marca }}</option>
-                                                @endforeach
-                                        </select>
-                                    </form>
-                                    </ul>
-                                </div>
-                                <div class="col-3">
-                                    <ul class="nav nav-bar">
-                                        Tamanho
-                                        <form action="/" method="GET">
-                                        @csrf
-                                        <select name="tamanho" id="tamanho" onchange="this.form.submit()">
-                                            <option value="" selected="selected">Escolha Tamanho</option>
-                                                @foreach ($tamanhoProdutos as $produto )
-                                                    <option value="{{ $produto->tamanho }}">{{ $produto->tamanho }}</option>
-                                                @endforeach
-                                        </select>
-                                    </form>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         @endif
-                    {{--  --}}
+
                     @yield('content') {{-- Conteúdo do web site --}}
                 </div>
             </div>
