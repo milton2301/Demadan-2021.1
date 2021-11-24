@@ -5,11 +5,11 @@
 <div class="container-fluid">
 
     <div id="produto-create-container" class="col-md-6 offset-md-3">
-        <h1>Atendendo de <strong><?php echo e($user->name); ?></strong></h1>
+        <h1>Atendendo de <strong><?php echo e($usuario->name); ?></strong></h1>
 
         <div class="form-group">
             <label for="title">Cliente</label>
-                <label for="" class="form-control"><?php echo e($user->name); ?></label>
+                <label for="" class="form-control"><?php echo e($usuario->name); ?></label>
             </div>
 
         <form action="<?php echo e(route('pedidos_status',$pedido->id)); ?>" method="POST">

@@ -7,11 +7,11 @@
 <div class="container-fluid">
 
     <div id="produto-create-container" class="col-md-6 offset-md-3">
-        <h1>Atendendo de <strong>{{ $user->name }}</strong></h1>
+        <h1>Atendendo de <strong>{{ $usuario->name }}</strong></h1>
 
         <div class="form-group">
             <label for="title">Cliente</label>
-                <label for="" class="form-control">{{ $user->name }}</label>
+                <label for="" class="form-control">{{ $usuario->name }}</label>
             </div>
 
         <form action="{{ route('pedidos_status',$pedido->id)}}" method="POST">

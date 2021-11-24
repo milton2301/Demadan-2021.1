@@ -36,7 +36,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Compra <?php echo e($lista->statusDesc()); ?></h5>
+                <h5 class="modal-title">Pedidos finalizados</h5>
             </div>
             <div class="modal-body">
                 <div id="itenspedidos"></div>

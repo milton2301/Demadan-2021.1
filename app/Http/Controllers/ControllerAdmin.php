@@ -191,10 +191,11 @@ class ControllerAdmin extends Controller
             $data = [];
 
             $pedidos = Pedido::findOrFail($id);
+            $idUser = $pedidos->usuario_id;
 
-            $user_name = User::join('pedidos', 'pedidos.usuario_id','=','users.id')->select('users.name')->get()->first();
+            $usuario = DB::table('users')->select('name')->where('users.id', $idUser)->get()->first();
 
-            $data['user'] = $user_name;
+            $data['usuario'] = $usuario;
             $data['pedido'] = $pedidos;
 
             return view('admin.atenderPedidos', $data);

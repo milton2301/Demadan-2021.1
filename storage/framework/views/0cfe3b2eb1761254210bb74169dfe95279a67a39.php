@@ -131,9 +131,15 @@
         <footer>
         <p>
           <h5>Demadan Store &copy; 2021 Loja de roupas femeninas</h5>
-        <p>
-            Contato: <a href="mailto:newgenleaderspiiel@gmail.com">www.demadanstore.com.br</a>
         </p>
+        <p>
+            Contato: <a href="mailto:newgenleaderspiiel@gmail.com" target="_blank">www.demadanstore.com.br</a>
+        </p>
+        <p>
+            Instagram: <a href="https://www.instagram.com/demadan.store/" target="_blank">Demadan Store</a>
+        </p>
+        <p>
+            R. Joinville, 3001 - São Pedro, São José dos Pinhais - PR, 83307-070
         </p>
     </footer>
 
