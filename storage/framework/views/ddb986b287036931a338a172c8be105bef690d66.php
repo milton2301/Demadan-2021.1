@@ -5,6 +5,36 @@
 
 <?php $__env->startSection('content'); ?> 
 
+    
+    <?php if($search || $filtroTipo || $filtroMarca): ?> 
+        <div class="visually hidden"></div>
+    <?php else: ?> 
+    <div class="container container-carrosel">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 h-100 d-inline-block">
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active ">
+                        <img class="img-itens" src="/img/imagensRoupas/3adce223ca01ff490a044702de51bdef" class="d-block w-100" alt="imagem da empresa">
+                      </div>
+                      <?php $__currentLoopData = $produtos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                      <div class="carousel-item">
+                        <a href="<?php echo e(route('ver_produto',$produto->id)); ?>">
+                        <img class="img-itens" src="/img/imagensRoupas/<?php echo e($produto->imagem); ?>" class="d-block w-100" alt="
+                        <?php echo e($produto->nome); ?>">
+                    </a>
+                    </div>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                      </div>
+                    </div>
+        </div>
+    </div>
+    </div>
+    <?php endif; ?>
+    
+
+
 <div id="prod-container" class="col-md-12 animate__animated animate__fadeInRight">
 
     <?php if($search): ?>

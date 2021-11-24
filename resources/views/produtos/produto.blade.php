@@ -26,6 +26,12 @@
                             <a href="{{ route('adicionar', ['id' => $produtos->id]) }}" class="btn btn-primary btn-prod">Adicionar <i class="fas fa-shopping-cart fa-lg"></i></a>
                         </form>
                     </div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>
+                        <a href="/" class="btn btn-success btn-prod">Voltar</a>
+                    </div>
                 </div>
                 {{--  --}}
             </div>

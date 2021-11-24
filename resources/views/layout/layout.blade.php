@@ -107,7 +107,7 @@
                                             <form action="/" method="GET">
                                                 @csrf
                                                 <li class="nav-link">
-                                                    <input class="nav-link" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="{{ $produto->tipo }}">
+                                                    <input class="nav-link nav-tipo" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="{{ $produto->tipo }}">
                                                 </li>
                                             </form>
                                         @endforeach
@@ -115,7 +115,7 @@
                                             <form action="/" method="GET">
                                             @csrf
                                                 <li class="nav-link">
-                                                    <input class="nav-link " name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="{{ $produto->marca }}">
+                                                    <input class="nav-link nav-marca" name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="{{ $produto->marca }}">
                                                 </li>
                                                 </form>
                                             @endforeach

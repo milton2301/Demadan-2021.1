@@ -11,7 +11,7 @@ body{
 
 
 header{
-    background-color:#fff;
+    background-color:#cccc;
     border-bottom: 0.5px solid #ccc;
 }
 
@@ -28,7 +28,7 @@ header{
     border: 0px  #ccc;
 }
 
-#tipo, #marca{
+.nav-marca, .nav-tipo{
     align-items: center;
     background-color: rgba(0,0,0,0);
     border-color: rgb(190, 116, 162);
@@ -47,10 +47,7 @@ header{
     transform-origin: 0 0;
     width: auto;
     -moz-appearance: none;
-    -webkit-logical-height: 3em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
-    -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
 }
-
 
 .row{
     margin: 0;
@@ -95,7 +92,7 @@ margin-left: 5%;
 
 #navbar{
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #cccc;
     padding: 5px 0;
 }
 
@@ -238,4 +235,20 @@ footer a:hover{
 .cont{
     border: 1px solid;
     margin: 2px;
+}
+
+.carousel-item{
+    width: 100%;
+    height: 50vh;
+}
+
+.carousel-item .img-itens{
+    margin-top: 10px;
+    width: 100%;
+    height: 95%;
+    border-radius:10px;
+}
+
+.container-carrosel{
+    background-color: rgb(238, 221, 231);
 }

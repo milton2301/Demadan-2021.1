@@ -103,12 +103,11 @@
                                 <div class="col-12 itens_select">
                                     <nav id="nav" class="navbar navbar-expand-lg navbar-light">
                                     <ul class="navbar-nav">
-                                      
                                         <?php $__currentLoopData = $tiposProdutos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <form action="/" method="GET">
                                                 <?php echo csrf_field(); ?>
                                                 <li class="nav-link">
-                                                    <input class="nav-link" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->tipo); ?>">
+                                                    <input class="nav-link nav-tipo" name="tipo" id="tipo"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->tipo); ?>">
                                                 </li>
                                             </form>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -116,7 +115,7 @@
                                             <form action="/" method="GET">
                                             <?php echo csrf_field(); ?>
                                                 <li class="nav-link">
-                                                    <input class="nav-link " name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->marca); ?>">
+                                                    <input class="nav-link nav-marca" name="marca" id="marca"  onclick="this.form.submit()" type="submit" value="<?php echo e($produto->marca); ?>">
                                                 </li>
                                                 </form>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

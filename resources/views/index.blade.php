@@ -5,6 +5,36 @@
 
 @section('content') {{-- Corpo do site --}}
 
+    {{-- --------------------------------------- --}}
+    @if($search || $filtroTipo || $filtroMarca) {{-- Se existir filtros some o carrosel --}}
+        <div class="visually hidden"></div>
+    @else {{-- Senão mostra o carrosel --}}
+    <div class="container container-carrosel">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 h-100 d-inline-block">
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active ">
+                        <img class="img-itens" src="/img/imagensRoupas/3adce223ca01ff490a044702de51bdef" class="d-block w-100" alt="imagem da empresa">
+                      </div>
+                      @foreach ($produtos as $produto)
+                      <div class="carousel-item">
+                        <a href="{{ route('ver_produto',$produto->id) }}">
+                        <img class="img-itens" src="/img/imagensRoupas/{{ $produto->imagem }}" class="d-block w-100" alt="
+                        {{ $produto->nome }}">
+                    </a>
+                    </div>
+                      @endforeach
+                      </div>
+                    </div>
+        </div>
+    </div>
+    </div>
+    @endif
+    {{-- --------------------------------------- --}}
+
+
 <div id="prod-container" class="col-md-12 animate__animated animate__fadeInRight">
 
     @if ($search)
