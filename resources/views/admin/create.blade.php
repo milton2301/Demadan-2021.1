@@ -13,11 +13,11 @@
             @csrf
             <div class="form-group">
                 <label for="tipo">Tipo</label>
-                <input name="tipo" id="tipo"  class="form-control" placeholder="Tipo a que pertence a peça cadastrada" autocomplete="off">
+                <input name="tipo" id="tipo"  class="form-control" placeholder="Tipo a que pertence a peça cadastrada" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input name="nome" id="nome"  class="form-control" placeholder="Nome peça" autocomplete="off">
+                <input name="nome" id="nome"  class="form-control" placeholder="Nome peça" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição</label>
@@ -34,19 +34,19 @@
             </div>
             <div class="form-group">
                 <label for="cor">Cor</label>
-                <input name="cor" id="cor"  class="form-control" placeholder="Cor da peça" autocomplete="off">
+                <input name="cor" id="cor"  class="form-control" placeholder="Cor da peça" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="marca">Marca</label>
-                <input name="marca" id="marca"  class="form-control" placeholder="Marca da peça" autocomplete="off">
+                <input name="marca" id="marca"  class="form-control" placeholder="Marca da peça" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="valor">Valor</label>
-                <input type="number" step="any" name="valor" id="valor"  class="form-control" placeholder="R$ xx,xx" autocomplete="off">
+                <input type="number" step="any" name="valor" id="valor"  class="form-control" placeholder="R$ xx,xx" autocomplete="off" required>
             </div><br>
             <div class="form-group">
                 <label for="imagem">Imagem</label>
-                <input type="file" name="imagem" id="imagem"  class="form-control">
+                <input type="file" name="imagem" id="imagem"  class="form-control" required>
             </div><br>
             <input type="submit" class="btn btn-primary" value="Cadastrar Item">
         </form>

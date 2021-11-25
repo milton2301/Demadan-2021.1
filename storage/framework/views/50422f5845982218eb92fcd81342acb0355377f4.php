@@ -9,16 +9,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
             <a href="<?php echo e(route('cadastrar')); ?>" class="nav-link">Cadastrar Produto  <i class="far fa-plus-square fa-lg"></i></a>
         </div>
-        <div class="col-3">
-            <a href="<?php echo e(route('ver_estoque')); ?>" class="nav-link">Estoque <i class="fas fa-database"></i></a>
-        </div>
-        <div class="col-3">
+        <div class="col-4">
             <a href="<?php echo e(route('pedidos_pendentes')); ?>" class="nav-link">Pedidos não atendidos  <i class="fas fa-shopping-basket"></i></a>
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <a href="<?php echo e(route('pedidos_finalizados')); ?>" class="nav-link">Pedidos atendidos  <i class="fas fa-cash-register"></i></a>
         </div>
     </div>

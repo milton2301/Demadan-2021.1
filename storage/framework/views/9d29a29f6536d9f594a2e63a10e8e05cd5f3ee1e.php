@@ -5,12 +5,23 @@
 <div class="container-fluid">
 
     <div id="produto-create-container" class="col-md-6 offset-md-3">
-        <h1>Atendendo de <strong><?php echo e($usuario->name); ?></strong></h1>
+        <h1>Atendendo Cliente <strong><?php echo e($usuario->name); ?></strong></h1>
 
-        <div class="form-group">
-            <label for="title">Cliente</label>
-                <label for="" class="form-control"><?php echo e($usuario->name); ?></label>
-            </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+            </tr>
+            <?php $__currentLoopData = $listaItens; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $itens): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <tr>
+                <td><?php echo e($itens->nome); ?></td>
+                <td><?php echo e($itens->quantidade); ?></td>
+                <td><?php echo e(number_format($itens->itemValor, 2, ',','.')); ?></td>
+            </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </table>
 
         <form action="<?php echo e(route('pedidos_status',$pedido->id)); ?>" method="POST">
             <?php echo csrf_field(); ?>

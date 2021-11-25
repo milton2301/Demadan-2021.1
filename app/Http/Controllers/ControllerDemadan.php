@@ -44,16 +44,13 @@ class ControllerDemadan extends Controller
 
         $tiposProdutos = Produto::select('tipo')->groupBy('tipo')->get();
         $marcaProdutos = Produto::select('marca')->groupBy('marca')->get();
-        $tamanhoProdutos = Produto::select('tamanho')->groupBy('tamanho')->get();
 
-        $data['tamanhoProdutos'] = $tamanhoProdutos;
         $data['marcaProdutos'] = $marcaProdutos;
         $data['tiposProdutos'] = $tiposProdutos;
         $data['produtos'] = $produtos;
         $data['search'] = $search;
         $data['filtroTipo'] = $filtroTipo;
         $data['filtroMarca'] = $filtroMarca;
-        $data['filtroTamanho'] = $filtroTamanho;
 
         return view('index', $data);
     }

@@ -7,12 +7,23 @@
 <div class="container-fluid">
 
     <div id="produto-create-container" class="col-md-6 offset-md-3">
-        <h1>Atendendo de <strong>{{ $usuario->name }}</strong></h1>
+        <h1>Atendendo Cliente <strong>{{ $usuario->name }}</strong></h1>
 
-        <div class="form-group">
-            <label for="title">Cliente</label>
-                <label for="" class="form-control">{{ $usuario->name }}</label>
-            </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+            </tr>
+            @foreach($listaItens as $itens )
+            <tr>
+                <td>{{ $itens->nome }}</td>
+                <td>{{ $itens->quantidade }}</td>
+                <td>{{number_format($itens->itemValor, 2, ',','.')}}</td>
+            </tr>
+            @endforeach
+        </table>
 
         <form action="{{ route('pedidos_status',$pedido->id)}}" method="POST">
             @csrf

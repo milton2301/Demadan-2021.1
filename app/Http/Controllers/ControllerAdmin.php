@@ -193,8 +193,13 @@ class ControllerAdmin extends Controller
             $pedidos = Pedido::findOrFail($id);
             $idUser = $pedidos->usuario_id;
 
+            $pesquisa = $pedidos->id;
+
+            $listaItens = ItenPedido::join("produtos","produtos.id", "=" ,"iten_pedidos.produto_id")->where("pedido_id", $pesquisa)->get(['iten_pedidos.*','iten_pedidos.valor as itemValor','produtos.*']);
+
             $usuario = DB::table('users')->select('name')->where('users.id', $idUser)->get()->first();
 
+            $data['listaItens'] = $listaItens;
             $data['usuario'] = $usuario;
             $data['pedido'] = $pedidos;
 
@@ -217,25 +222,6 @@ class ControllerAdmin extends Controller
         $pedidos = Pedido::all();
 
         return view('admin.pedidosAdmin',['pedidos' => $pedidos]);
-        }
-    }
-
-
-    public function estoque(){ /* Função que retorna os dados de um produto especifico*/
-
-        $user = auth()->user();
-
-        $email = $user->email;
-
-        if($email == 'amiltongomes2301@gmail.com'){
-
-        $data = [];
-
-        $produtos = Produto::all();
-
-        $data['produtos'] = $produtos;
-
-        return view('admin.estoque', $data);
         }
     }
 
