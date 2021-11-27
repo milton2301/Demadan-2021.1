@@ -10,8 +10,14 @@ use App\Models\User;
 use App\Services\CompraServices;
 use Illuminate\Support\Facades\DB;
 
+
 class ControllerDemadan extends Controller
 {
+
+    public function politica(){
+
+        return view('privacidade.politica');
+    }
 
     public function index(){ /* Função que gerencia os dados da pagina principal */
 

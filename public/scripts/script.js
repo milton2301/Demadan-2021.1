@@ -24,6 +24,16 @@ $(function() {
       url: url,
       type: 'GET',
       success: function(response){
+        if(!response.logradouro){
+            alert('CEP inválido digite novamente')
+            document.querySelector('#cep').value='';
+            document.querySelector('#cep').focus();
+            document.querySelector("#rua").value = '';
+            document.querySelector('#bairro').value = '';
+            document.querySelector('#cidade').value = '';
+            document.querySelector('#estado').value = '';
+            exit()
+        }else{
         //Insere dados buscado na API do viacep com base no CEP passado pelo usuário
             document.querySelector("#rua").value = response.logradouro
             document.querySelector('#bairro').value = response.bairro;
@@ -34,7 +44,8 @@ $(function() {
             document.querySelector('#bairro').readOnly = true;
             document.querySelector('#cidade').readOnly = true;
             document.querySelector('#estado').readOnly = true;
-      }
+            }
+        }
     })
 
   }
@@ -50,3 +61,4 @@ document.getElementById('marca').addEventListener('change', function() {
 document.getElementById('tamanho').addEventListener('change', function() {
     this.form.submit();
 });
+

@@ -23,13 +23,15 @@ Route::get('/admin/pedidosAdmin', [ControllerAdmin::class, 'pedidosPen'])->name(
 
 Route::get('/admin/pedidosAtendidos', [ControllerAdmin::class, 'pedidosFin'])->name('pedidos_finalizados');
 
-Route::get('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'atenderPedido'])->name('atender_pedido');
+Route::get('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'atenderPedido'])->name('atender_pedido')->middleware('auth');
 
-Route::put('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'finalizarPedido'])->name('pedidos_status');
+Route::put('/admin/atenderPedidos/{id}', [ControllerAdmin::class, 'finalizarPedido'])->name('pedidos_status')->middleware('auth');
 
 
 /* Configurações das rotas de funções de usuário*/
 Route::get('/',[ControllerDemadan::class, 'index'])->name('index'); /* Rota para a pagina princiapl do site */
+
+Route::get('/privacidade/politica',[ControllerDemadan::class, 'politica'])->name('privacidade');
 
 Route::get('/produtos/produto/{id}',[ControllerDemadan::class, 'produto'])->name('ver_produto');/* Rota que manda para as especificações de cada produto */
 

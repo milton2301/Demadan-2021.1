@@ -9,7 +9,7 @@
     <div id="tarefas-create-container" class="col-md-6 offset-md-3">
         <h1>Cadastro de novas peças</h1>
 
-        <form action="/cadastra" method="POST" enctype="multipart/form-data">
+        <form action="/admin" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="form-group">
                 <label for="tipo">Tipo</label>

@@ -2,7 +2,6 @@
 
 @section('title','Pricipal') {{-- Pega o titulo dinâmicamente --}}
 
-
 @section('content') {{-- Corpo do site --}}
 
     {{-- --------------------------------------- --}}
@@ -69,4 +68,27 @@
     </div>
 </div>
 </div>
+
+<div class="box-cookies hide">
+    <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a href="{{route('privacidade')}}">Política de Privacidade</a></p>
+    <div class="btn-cookies">Entendi</div>
+</div>
+
+<script>
+    if (!localStorage.Cookies) {
+        document.querySelector(".box-cookies").classList.remove('hide');
+    }
+
+    const acceptCookies = () => {
+        document.querySelector(".box-cookies").classList.add('hide');
+        localStorage.setItem("Cookies", "accept");
+    };
+
+    const btnCookies = document.querySelector(".btn-cookies");
+
+    btnCookies.addEventListener('click', acceptCookies);
+</script>
+
+
 @endsection {{-- Fim do corpo deo site --}}
+
