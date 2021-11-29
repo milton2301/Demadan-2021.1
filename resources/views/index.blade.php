@@ -39,7 +39,7 @@
     @if ($search)
         <h4> Todos os resultados da busca por <strong>{{ $search }}</strong></h4>
     @elseif($filtroTipo)
-    <h4>Filtrando pelo Tipo <strong>{{ $filtroTipo }}</strong></h4>
+    <h4>Filtrando pelo Tipo: <strong>{{ $filtroTipo }}</strong></h4>
     @elseif($filtroMarca)
     <h4>Filtrando pela Marca: <strong>{{ $filtroMarca }}</strong></h4>
     @else

@@ -39,7 +39,7 @@
     <?php if($search): ?>
         <h4> Todos os resultados da busca por <strong><?php echo e($search); ?></strong></h4>
     <?php elseif($filtroTipo): ?>
-    <h4>Filtrando pelo Tipo <strong><?php echo e($filtroTipo); ?></strong></h4>
+    <h4>Filtrando pelo Tipo: <strong><?php echo e($filtroTipo); ?></strong></h4>
     <?php elseif($filtroMarca): ?>
     <h4>Filtrando pela Marca: <strong><?php echo e($filtroMarca); ?></strong></h4>
     <?php else: ?>
