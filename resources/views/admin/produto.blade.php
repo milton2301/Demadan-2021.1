@@ -20,10 +20,10 @@
                 <p class="card-title"><i>Em até 5X de R$ {{number_format( $parcelas = $produtos->valor / 5, 2, ',','.') }} s/juros no cartão da loja</i></p>
                 {{--  --}}
                 <div class="container">
-                        <div class="col-6">
+                        <div class="col-10">
                             <a href="{{ route('editar',$produtos->id)}}" class="btn btn-info edit-btn btn-prod">Editar <i class="fas fa-edit"></i></a>
                         </div>
-                        <div class="col-6">
+                        <div class="col-10">
                             <form action="/admin/{{ $produtos->id }}" method="POST">
                                 @csrf
                                 @method('DELETE') <br>
